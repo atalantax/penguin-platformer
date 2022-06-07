@@ -6,7 +6,7 @@ public class PenguinController : MonoBehaviour
 {
 
     public float jumpforce = 5;
-    public float lifeforce = 5;
+    public float lifeforce = 100;
 
     public float speed;
     public bool grounded;
@@ -30,6 +30,8 @@ public class PenguinController : MonoBehaviour
         Vector2 vel = rb2d.velocity;
         float horizontalInput = Input.GetAxis("Horizontal") * speed;
         vel.x = horizontalInput;
+
+        jumpforce = lifeforce / 20;
 
         UpdateGrounding();
 
