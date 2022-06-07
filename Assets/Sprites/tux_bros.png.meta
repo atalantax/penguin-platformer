@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -8377,10 +8377,10 @@ TextureImporter:
       tux_bros_226: -985740071
       tux_bros_203: -1679976126
       tux_bros_68: 314385057
-      tux_bros_128: -1460310556
       tux_bros_385: 952102948
-      tux_bros_33: -767932266
       tux_bros_387: 1114592726
+      tux_bros_128: -1460310556
+      tux_bros_33: -767932266
       tux_bros_278: -1465478977
       tux_bros_4: -1051955625
       tux_bros_285: -527254755
@@ -8411,8 +8411,8 @@ TextureImporter:
       tux_bros_122: 1120126816
       tux_bros_216: -2032903236
       tux_bros_110: 1584319702
-      tux_bros_120: -1457627238
       tux_bros_315: 676863332
+      tux_bros_120: -1457627238
       tux_bros_23: -1977267830
       tux_bros_257: -2015792199
       tux_bros_322: 434650888
@@ -8462,8 +8462,8 @@ TextureImporter:
       tux_bros_101: 336400205
       tux_bros_267: -409439362
       tux_bros_60: 1624468591
-      tux_bros_125: 1994644428
       tux_bros_363: 1219499860
+      tux_bros_125: 1994644428
       tux_bros_26: 195728087
       tux_bros_262: -365576457
       tux_bros_164: 1834635564
@@ -8544,24 +8544,24 @@ TextureImporter:
       tux_bros_195: -1132921882
       tux_bros_381: 1619095843
       tux_bros_79: 266579001
-      tux_bros_114: -1983586985
       tux_bros_210: -757731601
-      tux_bros_194: -1205579511
+      tux_bros_114: -1983586985
       tux_bros_84: 387635642
       tux_bros_40: -87793763
-      tux_bros_307: -1640746665
       tux_bros_227: -472644774
       tux_bros_360: 1213667152
       tux_bros_228: 2066038949
+      tux_bros_194: -1205579511
+      tux_bros_307: -1640746665
       tux_bros_172: -81077909
       tux_bros_293: -1274059958
       tux_bros_123: 1181497291
       tux_bros_333: -1245383537
       tux_bros_39: 2105561636
-      tux_bros_336: 1360201220
       tux_bros_372: -1387459255
       tux_bros_339: -479065521
       tux_bros_196: -1085551413
+      tux_bros_336: 1360201220
       tux_bros_212: -1474363766
       tux_bros_254: -1794005909
       tux_bros_88: 1902648356
