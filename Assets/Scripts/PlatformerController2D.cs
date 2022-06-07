@@ -30,13 +30,13 @@ public class PlatformerController2D : Controller2D
         relativeVelocity = vel;
 
         UpdateGrounding();
-        
+
         /*
         if (onMovingPlatform != null)
         {
             vel.x += onMovingPlatform.rb2d.velocity.x;
         }
-
+         */
         bool inputJump = Input.GetKeyDown(KeyCode.Space);
         if (inputJump && grounded)
         {
@@ -44,7 +44,7 @@ public class PlatformerController2D : Controller2D
             vel.y = jumpforce;
             relativeVelocity.y = vel.y;
         }
-        */
+
         rb2d.velocity = vel;
     }
 

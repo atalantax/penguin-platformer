@@ -200,15 +200,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037677f88d9a2964da913b2e19b2eaf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 2
   grounded: 0
   groundLayers:
     serializedVersion: 2
     m_Bits: 1
-  groundRayLength: 1
+  groundRayLength: 0.5
   groundRaySpread: 0.1
   relativeVelocity: {x: 0, y: 0}
-  jumpforce: 0
+  jumpforce: 2
   lifeforce: 100
   poisondamage: 10
 --- !u!212 &551624313
