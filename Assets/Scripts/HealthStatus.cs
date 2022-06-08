@@ -12,10 +12,14 @@ public class HealthStatus: MonoBehaviour
     public Image fill;
     public float fadeSpeed = 1;
 
-    private AudioSource myAudioSource;
-    public AudioClip[] music;
+    public AudioSource HappyMusic;
+    public AudioSource TenseMusic;
+    public AudioSource SadMusic;
+
+
 
     private string musicType = "";
+    private bool tensePlayed = false;
 
 
     public Image gameOverScreen;
@@ -23,7 +27,13 @@ public class HealthStatus: MonoBehaviour
 
     private void Start()
     {
-        myAudioSource = GetComponent<AudioSource>();
+        HappyMusic.volume = 100;
+        TenseMusic.volume = 0;
+        SadMusic.volume = 0;
+        HappyMusic.Play();
+        TenseMusic.Play();
+        SadMusic.Play();
+
     }
 
     public void SetMaxHealth(float health)
@@ -40,14 +50,18 @@ public class HealthStatus: MonoBehaviour
         fill.color = gradient.Evaluate(slider.normalizedValue);
         if (health >= 35 && musicType != "Happy")
         {
-            myAudioSource.clip = music[0];
-            myAudioSource.Play();
+            HappyMusic.volume = 100;
+            TenseMusic.volume = 0;
+            SadMusic.volume = 0;
+
+
             musicType = "Happy";
         }
-        else if (health < 35 && musicType == "Happy")
+        else if (health < 35 && health > 0 && musicType != "Tense")
         {
-            myAudioSource.clip = music[1];
-            myAudioSource.Play();
+            HappyMusic.volume = 0;
+            TenseMusic.volume = 100;
+            SadMusic.volume = 0;
             musicType = "Tense";
         }
     }
@@ -65,11 +79,15 @@ public class HealthStatus: MonoBehaviour
 
     }
 
+    // use math lerp over time
+    // happen relatively fast compared to gme state
+
     public IEnumerator ShowEndScreen()
     {
         musicType = "Sad";
-        myAudioSource.clip = music[2];
-        myAudioSource.Play();
+        HappyMusic.volume = 0;
+        TenseMusic.volume = 0;
+        SadMusic.volume = 100;
         Color objectColor = gameOverScreen.color;
         Color textColor = gameOverMessage.color;
         float fadeAmount;
