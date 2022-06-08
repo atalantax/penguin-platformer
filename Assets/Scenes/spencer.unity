@@ -892,7 +892,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GAME OVER
+  m_text: "Penguins can't jump and have fun when all they have to eat is polluted
+    fish :( \n\nYou stayed alive for _____ seconds. \n\nLet's clean up our oceans
+    so that future penguins can stay alive for longer!\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: da6c2b3087b8547b8bbf0614c1b6c855, type: 2}
   m_sharedMaterial: {fileID: -1498145481743715722, guid: da6c2b3087b8547b8bbf0614c1b6c855, type: 2}
@@ -2438,7 +2440,7 @@ GameObject:
   - component: {fileID: 1361984768}
   - component: {fileID: 1361984769}
   m_Layer: 3
-  m_Name: MainPenguinPlaceholder
+  m_Name: MainPenguin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2482,7 +2484,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 0.8}
+    oldSize: {x: 2.24, y: 2.24}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2545,7 +2547,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1484120035, guid: e8ce628ccda4142839e9f6493f90b20f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fcc0ce080dba4427f81b13564d0b60ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2595,6 +2597,13 @@ MonoBehaviour:
   lifeforce: 100
   lifeForceLossSpeed: 0.01
   poisondamage: 10
+  spriteArray:
+  - {fileID: 21300000, guid: fcc0ce080dba4427f81b13564d0b60ba, type: 3}
+  - {fileID: 21300000, guid: 120f67aa974084934883e664f8d253f3, type: 3}
+  - {fileID: 21300000, guid: 06081b04517c249699a927a810557617, type: 3}
+  - {fileID: 21300000, guid: efc4c18c8ad4845be963b2f1afcb15f5, type: 3}
+  - {fileID: 21300000, guid: efc4c18c8ad4845be963b2f1afcb15f5, type: 3}
+  - {fileID: 21300000, guid: ab77d5f6f77324d8cb91909d3f960b3c, type: 3}
   hb: {fileID: 1310891191}
 --- !u!114 &1361984769
 MonoBehaviour:
