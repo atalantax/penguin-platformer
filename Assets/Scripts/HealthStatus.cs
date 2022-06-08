@@ -11,6 +11,7 @@ public class HealthStatus: MonoBehaviour
     public Gradient gradient;
     public Image fill;
     public float fadeSpeed = 1;
+    public float audioFadeRate;
 
     public AudioSource HappyMusic;
     public AudioSource TenseMusic;
@@ -103,4 +104,21 @@ public class HealthStatus: MonoBehaviour
             yield return null;
         }
     }
+
+    //public void FadeMusic(AudioSource oldSong, AudioSource newSong)
+    //{
+    //    while (oldSong.volume > 0.1f)
+    //    {
+    //        oldSong.volume = Mathf.Lerp(oldSong.volume, 0.0f, audioFadeRate * Time.deltaTime);
+    //    }
+    //    oldSong.volume = 0.0f;
+
+
+    //    while (newSong.volume < 0.9)
+    //    {
+    //        newSong.volume = Mathf.Lerp(newSong.volume, 1.0f, audioFadeRate * Time.deltaTime);
+    //    }
+    //    newSong.volume = 1.0f;
+    //}
+
 }
