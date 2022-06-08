@@ -11,7 +11,7 @@ public class Fish : MonoBehaviour
     void Start()
     {
         sRenderer = GetComponent<SpriteRenderer>();
-}
+    }
 
     // Update is called once per frame
     /*void Update()
