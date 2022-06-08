@@ -17,8 +17,6 @@ public class HealthStatus: MonoBehaviour
     public AudioSource TenseMusic;
     public AudioSource SadMusic;
 
-
-
     private string musicType = "";
     private bool tensePlayed = false;
 

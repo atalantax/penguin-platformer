@@ -32,7 +32,7 @@ public class NewsTicker : MonoBehaviour
     private IEnumerator Start()
     {
 
-        float width = text.preferredWidth * 3;
+        float width = text.preferredWidth;
         Vector3 startPosition = textRectTransform.localPosition;
 
         float scrollPosition = 0;
