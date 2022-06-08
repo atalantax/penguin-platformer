@@ -12,14 +12,19 @@ public class HealthStatus: MonoBehaviour
     public Image fill;
     public float fadeSpeed = 1;
 
+    private AudioSource myAudioSource;
+    public AudioClip[] music;
+
+    private string musicType = "";
+
+
     public Image gameOverScreen;
     public TMP_Text gameOverMessage;
 
-    //private void Start()
-    //{
-    //    gameOverScreen.enabled = false;
-    //    gameOverMessage.enabled = false;
-    //}
+    private void Start()
+    {
+        myAudioSource = GetComponent<AudioSource>();
+    }
 
     public void SetMaxHealth(float health)
     {
@@ -32,8 +37,19 @@ public class HealthStatus: MonoBehaviour
     public void SetHealth(float health)
     {
         slider.value = health;
-
         fill.color = gradient.Evaluate(slider.normalizedValue);
+        if (health >= 35 && musicType != "Happy")
+        {
+            myAudioSource.clip = music[0];
+            myAudioSource.Play();
+            musicType = "Happy";
+        }
+        else if (health < 35 && musicType == "Happy")
+        {
+            myAudioSource.clip = music[1];
+            myAudioSource.Play();
+            musicType = "Tense";
+        }
     }
 
     public void Die()
@@ -41,6 +57,7 @@ public class HealthStatus: MonoBehaviour
         Debug.Log("You died!");
         // bar turns grey
         fill.color = Color.gray;
+        slider.value = 100;
         // everything gets depressing
         // penguin can no longer jump
         // slowly fade into end screen
@@ -50,6 +67,9 @@ public class HealthStatus: MonoBehaviour
 
     public IEnumerator ShowEndScreen()
     {
+        musicType = "Sad";
+        myAudioSource.clip = music[2];
+        myAudioSource.Play();
         Color objectColor = gameOverScreen.color;
         Color textColor = gameOverMessage.color;
         float fadeAmount;
