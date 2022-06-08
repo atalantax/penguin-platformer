@@ -12,6 +12,8 @@ public class PlatformerController2D : Controller2D
     public float poisondamage = 10;
     private float inputX;
     private bool gameOver = false;
+    public Sprite[] spriteArray;
+
     private SpriteRenderer sRenderer;
 
     public HealthStatus hb;
@@ -40,8 +42,28 @@ public class PlatformerController2D : Controller2D
         hb.SetHealth(lifeforce);
         jumpforce = Mathf.Sqrt(lifeforce);
 
-        if (lifeforce <= 0 && gameOver == false)
+        if (lifeforce >= 75 && lifeforce <= 100)
         {
+            sRenderer.sprite = spriteArray[0];
+        }
+        else if (lifeforce >= 50 && lifeforce <= 75)
+        {
+            sRenderer.sprite = spriteArray[1];
+
+        }
+        else if (lifeforce >= 25 && lifeforce <= 50)
+        {
+            sRenderer.sprite = spriteArray[2];
+
+        }
+        else if (lifeforce >= 0 && lifeforce <= 25)
+        {
+            sRenderer.sprite = spriteArray[3];
+
+        }
+        else if (lifeforce <= 0 && gameOver == false)
+        {
+            sRenderer.sprite = spriteArray[4];
             hb.Die();
             gameOver = true;
         }
