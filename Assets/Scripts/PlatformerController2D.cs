@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlatformerController2D : Controller2D
@@ -10,8 +11,8 @@ public class PlatformerController2D : Controller2D
     public float lifeForceLossSpeed = 0.01f;
     public float poisondamage = 10;
     private float inputX;
+    private bool gameOver = false;
     private SpriteRenderer sRenderer;
-    private bool invulnerable = false;
 
     public HealthStatus hb;
 
@@ -39,6 +40,11 @@ public class PlatformerController2D : Controller2D
         hb.SetHealth(lifeforce);
         jumpforce = Mathf.Sqrt(lifeforce);
 
+        if (lifeforce <= 0 && gameOver == false)
+        {
+            hb.Die();
+            gameOver = true;
+        }
 
         /*
         if (onMovingPlatform != null)
@@ -94,7 +100,7 @@ public class PlatformerController2D : Controller2D
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        StartCoroutine(Invulnerability(1));
+        //StartCoroutine(Invulnerability(1));
     }
 
     public void CollectCoin()
@@ -104,16 +110,16 @@ public class PlatformerController2D : Controller2D
         hb.SetHealth(lifeforce);
     }
 
-    IEnumerator Invulnerability(float time)
-    {
-        invulnerable = true;
-        for (int i = 0; i < time / 0.2f; i++)
-        {
-            sRenderer.color = Color.red;
-            yield return new WaitForSeconds(0.1f);
-            sRenderer.color = Color.white;
-            yield return new WaitForSeconds(0.1f);
-        }
-        invulnerable = false;
-    }
+    //IEnumerator Invulnerability(float time)
+    //{
+    //    invulnerable = true;
+    //    for (int i = 0; i < time / 0.2f; i++)
+    //    {
+    //        sRenderer.color = Color.red;
+    //        yield return new WaitForSeconds(0.1f);
+    //        sRenderer.color = Color.white;
+    //        yield return new WaitForSeconds(0.1f);
+    //    }
+    //    invulnerable = false;
+    //}
 }
