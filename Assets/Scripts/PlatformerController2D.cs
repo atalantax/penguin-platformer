@@ -37,6 +37,7 @@ public class PlatformerController2D : Controller2D
 
         lifeforce -= lifeForceLossSpeed;
         hb.SetHealth(lifeforce);
+        jumpforce = Mathf.Sqrt(lifeforce);
 
 
         /*
@@ -48,7 +49,6 @@ public class PlatformerController2D : Controller2D
         bool inputJump = Input.GetKeyDown(KeyCode.Space);
         if (inputJump && grounded)
         {
-            
             vel.y = jumpforce;
             relativeVelocity.y = vel.y;
         }
