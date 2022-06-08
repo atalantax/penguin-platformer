@@ -25,7 +25,7 @@ public class RottenFish : MonoBehaviour
         PlatformerController2D controller = other.gameObject.GetComponent<PlatformerController2D>();
         if (controller != null)
         {
-            controller.CollectCoin();
+            controller.TakeDamage();
             //Doorway door = FindObjectOfType<Doorway>();
             //if (door != null) door.CoinCollected();
             StartCoroutine(CollectAnimation());

@@ -20,6 +20,7 @@ public class PlatformerController2D : Controller2D
     {
         base.Start();
         sRenderer = GetComponent<SpriteRenderer>();
+        hb.SetMaxHealth(100);
         
         //HeartsUI.SetLives(lives);
     }
@@ -52,6 +53,8 @@ public class PlatformerController2D : Controller2D
 
     protected override void Hurt(Vector3 impactDirection)
     {
+        Debug.Log("Hurt!");
+
         if (Mathf.Abs(impactDirection.x) > Mathf.Abs(impactDirection.y))
         {
             TakeDamage();
@@ -71,10 +74,12 @@ public class PlatformerController2D : Controller2D
 
     public void TakeDamage()
     {
-        if (invulnerable)
-        {
-            return;
-        }
+        Debug.Log("Damage taken!");
+
+        //if (invulnerable)
+        //{
+        //    return;
+        //}
        
         lifeforce -= poisondamage;
         hb.SetHealth(lifeforce);
@@ -89,6 +94,7 @@ public class PlatformerController2D : Controller2D
 
     public void CollectCoin()
     {
+        Debug.Log("Coin collected!");
         lifeforce = 100;
         hb.SetHealth(lifeforce);
     }
