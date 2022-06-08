@@ -7,6 +7,7 @@ public class PlatformerController2D : Controller2D
 {
     public float jumpforce;
     public float lifeforce = 100;
+    public float lifeForceLossSpeed = 0.01f;
     public float poisondamage = 10;
     private float inputX;
     private SpriteRenderer sRenderer;
@@ -33,6 +34,10 @@ public class PlatformerController2D : Controller2D
         relativeVelocity = vel;
 
         UpdateGrounding();
+
+        lifeforce -= lifeForceLossSpeed;
+        hb.SetHealth(lifeforce);
+
 
         /*
         if (onMovingPlatform != null)
