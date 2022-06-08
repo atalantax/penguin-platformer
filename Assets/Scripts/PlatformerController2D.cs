@@ -12,6 +12,8 @@ public class PlatformerController2D : Controller2D
     private SpriteRenderer sRenderer;
     private bool invulnerable = false;
 
+    public HealthStatus hb;
+
    
 
     public override void Start()
@@ -75,6 +77,8 @@ public class PlatformerController2D : Controller2D
         }
        
         lifeforce -= poisondamage;
+        hb.SetHealth(lifeforce);
+
         //HeartsUI.RemoveHeart();
         if (lifeforce <= 0)
         {
@@ -85,7 +89,8 @@ public class PlatformerController2D : Controller2D
 
     public void CollectCoin()
     {
-       
+        lifeforce = 100;
+        hb.SetHealth(lifeforce);
     }
 
     IEnumerator Invulnerability(float time)
