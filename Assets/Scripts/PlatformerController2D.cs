@@ -128,7 +128,15 @@ public class PlatformerController2D : Controller2D
     public void CollectCoin()
     {
         Debug.Log("Coin collected!");
-        lifeforce = 100;
+        if (lifeforce < 75)
+        {
+            lifeforce += 25;
+
+        }
+        else
+        {
+            lifeforce = 100;
+        }
         hb.SetHealth(lifeforce);
     }
 
