@@ -94,7 +94,7 @@ public class HealthStatus: MonoBehaviour
         Color textColor = gameOverMessage.color;
         timer.enabled = false;
         string final = timer.text;
-        gameOverMessage.text = "Penguins can't jump and have fun when all they have to eat is polluted fish :( \n\nYou stayed alive for " + final + " seconds. \n\nLet's clean up our oceans for our future penguins!";
+        gameOverMessage.text = "Penguins can't jump and run and have fun when all they have to eat is polluted fish :( \n\nYou stayed alive for " + final + " seconds. \n\nLet's clean up our oceans so our penguins can keep jumping!";
         float fadeAmount;
         while (gameOverScreen.color.a < 1)
         {
