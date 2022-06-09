@@ -17,6 +17,8 @@ public class HealthStatus: MonoBehaviour
     public AudioSource TenseMusic;
     public AudioSource SadMusic;
 
+    public TMP_Text timer;
+
     private string musicType = "";
     private bool tensePlayed = false;
 
@@ -32,6 +34,7 @@ public class HealthStatus: MonoBehaviour
         HappyMusic.Play();
         TenseMusic.Play();
         SadMusic.Play();
+
 
     }
 
@@ -89,6 +92,9 @@ public class HealthStatus: MonoBehaviour
         SadMusic.volume = 100;
         Color objectColor = gameOverScreen.color;
         Color textColor = gameOverMessage.color;
+        timer.enabled = false;
+        string final = timer.text;
+        gameOverMessage.text = "Penguins can't jump and have fun when all they have to eat is polluted fish :( \n\nYou stayed alive for " + final + " seconds. \n\nLet's clean up our oceans for our future penguins!";
         float fadeAmount;
         while (gameOverScreen.color.a < 1)
         {

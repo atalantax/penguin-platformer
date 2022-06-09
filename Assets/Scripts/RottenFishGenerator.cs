@@ -17,23 +17,29 @@ public class RottenFishGenerator : MonoBehaviour
 
         Vector3 spawnPosition = new Vector3();
 
-        for (int i = 0; i < Mathf.Ceil(0.33f * numFish); i++)
+        for (int i = 0; i < Mathf.Ceil(0.25f * numFish); i++)
         {
-            spawnPosition.y += Random.Range(minY, 10 * maxY);
+            spawnPosition.y += Random.Range(minY, 2.7f * maxY);
             spawnPosition.x = Random.Range(-width, width);
             Instantiate(BadFishPrefab, spawnPosition, Quaternion.identity);
         }
 
-        for (int i = 0; i < Mathf.Ceil(0.33f * numFish); i++)
+        for (int i = 0; i < Mathf.Ceil(0.25f * numFish); i++)
         {
-            spawnPosition.y += Random.Range(minY, 3 * maxY);
+            spawnPosition.y += Random.Range(minY, 1.5f * maxY);
             spawnPosition.x = Random.Range(-width, width);
             Instantiate(BadFishPrefab, spawnPosition, Quaternion.identity);
         }
 
-        for (int i = 0; i < Mathf.Ceil(0.33f * numFish); i++)
+        for (int i = 0; i < Mathf.Ceil(0.25f * numFish); i++)
         {
-            spawnPosition.y += Random.Range(minY, maxY);
+            spawnPosition.y += Random.Range(minY, 0.8f * maxY);
+            spawnPosition.x = Random.Range(-width, width);
+            Instantiate(BadFishPrefab, spawnPosition, Quaternion.identity);
+        }
+        for (int i = 0; i < Mathf.Ceil(0.25f * numFish); i++)
+        {
+            spawnPosition.y += Random.Range(minY, 0.6f * maxY);
             spawnPosition.x = Random.Range(-width, width);
             Instantiate(BadFishPrefab, spawnPosition, Quaternion.identity);
         }
